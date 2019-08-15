@@ -69,7 +69,7 @@ func main() {
 
 				// use a hash of the URL and the arguments as the filename
 				filename := fmt.Sprintf("%x", sha1.Sum([]byte(u+strings.Join(args, " "))))
-				p := filepath.Join(outputDir, domain, filename)
+				p := filepath.Join(outputDir,filename)
 
 				if _, err := os.Stat(path.Dir(p)); os.IsNotExist(err) {
 					err = os.MkdirAll(path.Dir(p), 0755)
